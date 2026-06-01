@@ -186,6 +186,9 @@ type MarkAccessInput struct {
 
 type RecordStore interface {
 	GetRecord(ctx context.Context, tenantID, memoryID string) (MemoryRecord, error)
+	// GetRecordIncludingHidden returns the record even when Deleted or Disabled,
+	// for idempotency reconciliation. Returns ErrNotFound only when truly absent.
+	GetRecordIncludingHidden(ctx context.Context, tenantID, memoryID string) (MemoryRecord, error)
 	WriteRecord(ctx context.Context, in WriteRecordInput) (WriteRecordResult, error)
 	PatchRecord(ctx context.Context, in PatchRecordInput) (PatchRecordResult, error)
 	DeleteRecord(ctx context.Context, in DeleteRecordInput) (DeleteRecordResult, error)

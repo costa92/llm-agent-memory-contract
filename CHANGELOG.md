@@ -8,6 +8,16 @@ documented in this file.
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-06-02
+
+### Added
+
+- **Shared promotion policy (M8 D3).** `PromotionEligible(record)`,
+  `PromoteImportanceThreshold = 0.7`, `DedupeKey(record)` and
+  `NormalizeDedupeContent(record)` — the single source of truth for the
+  promotion rule and dedupe identity, previously duplicated byte-for-byte in
+  the consolidation worker and the gateway session-close path. Purely additive.
+
 ## [0.1.0] - 2026-05-26
 
 ### Added

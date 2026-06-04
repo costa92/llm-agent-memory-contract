@@ -1,3 +1,5 @@
+[English](./README.md) | [简体中文](./README.zh-CN.md)
+
 # llm-agent-memory-contract
 
 Stdlib-only, backend-neutral durable-memory contract for the llm-agent
